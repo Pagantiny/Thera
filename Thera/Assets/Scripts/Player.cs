@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     }
 
     private void OnEnable()
-    {
+    {   // ripete il metodo AnimateSprite ciclicamente
         InvokeRepeating(nameof(AnimateSprite), 1f/12f, 1f/12f);
     }
 
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
     private void CheckCollision()
     {
-        grounded = false;
+        grounded = true;
         climbing = false;
 
         Vector3 size = collider.bounds.size;
