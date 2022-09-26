@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
     private void CheckCollision()
     {
-        grounded = true;
+        grounded = false;
         climbing = false;
 
         Vector3 size = collider.bounds.size;
@@ -60,8 +60,8 @@ public class Player : MonoBehaviour
             if (hit.layer == LayerMask.NameToLayer("Ground"))
             {
                 // Only set as grounded if the platform is below the player
-                grounded = hit.transform.position.y < (transform.position.y - 0.5f);
-
+                grounded = true;
+                
                 // Turn off collision on platforms the player is not grounded to
                 Physics2D.IgnoreCollision(overlaps[i], collider, !grounded);
             }
@@ -93,14 +93,14 @@ public class Player : MonoBehaviour
             transform.eulerAngles = Vector3.zero;
         } else if (direction.x < 0f) {
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
-        }
+        } 
     }
 
     private void FixedUpdate()
     {
         rigidbody.MovePosition(rigidbody.position + direction * Time.fixedDeltaTime);
     }
-
+    // animazione sprite
     private void AnimateSprite()
     {
         if (climbing)
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
             spriteRenderer.sprite = runSprites[spriteIndex];
         }
     }
-
+    //controllo collisione con obbiettivo o ostacolo
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Objective"))

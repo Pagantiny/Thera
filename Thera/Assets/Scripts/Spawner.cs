@@ -3,8 +3,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject prefab;
-    public float minTime = 2f;
-    public float maxTime = 4f;
+    public float minTime = 12f;
+    public float maxTime = 24f;
 
     private void Start()
     {
