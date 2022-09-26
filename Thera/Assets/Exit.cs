@@ -13,7 +13,7 @@ public class Exit : MonoBehaviour
 
 
     // Update is called once per frame
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
