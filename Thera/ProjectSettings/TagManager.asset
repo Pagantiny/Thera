@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Objective
+  - Ground
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -11,10 +15,10 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Ladder
+  - Player
+  - Barrel
+  - Ground
   - 
   - 
   - 
