@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "PlayerLab")
         { 
             Destroy(other.gameObject);
             Debug.Log("Livello Fallito");
