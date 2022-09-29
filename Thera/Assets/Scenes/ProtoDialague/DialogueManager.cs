@@ -17,12 +17,13 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject sprite;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [Header("Choice UI")]
     [SerializeField] private GameObject[] choices;
 
     private TextMeshProUGUI[] choicesText; 
-
+    
 
     private static DialogueManager instance;
 
@@ -48,6 +49,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        sprite.SetActive(false);
 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -77,6 +79,7 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        sprite.SetActive(true);
       
         ContinueStory();
     }
@@ -85,6 +88,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        sprite.SetActive(false);
         dialogueText.text = "";
     }
     private void ContinueStory ()
