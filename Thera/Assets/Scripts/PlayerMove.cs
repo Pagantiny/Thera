@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float speed = 3f;
-    Rigidbody2D body;
+    public Rigidbody2D body;
 
 
     // Start is called before the first frame update
@@ -17,6 +17,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //input
+        
     }
 
     void FixedUpdate()
@@ -36,5 +38,22 @@ public class PlayerMove : MonoBehaviour
             transform.up = input;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Objective"))
+        {
+            // livello completato
+            enabled = false;
+            FindObjectOfType<GameManager>().LevelComplete();
+        }
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            //in caso volessimo aggiungere possibili trappole nel livello
+            enabled = false;
+            FindObjectOfType<GameManager>().LevelFailed();
+        }
+    }
+
 
 }
