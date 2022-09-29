@@ -24,7 +24,9 @@ public class fov_script : MonoBehaviour
             {
                 // WE SPOTTED THE PLAYER!
                 print("SEEN!");
-                //Unity.Debug.DrawRay(fovPoint.position, dir, Color.red);
+              
+                enabled = false;
+                FindObjectOfType<GameManager>().LevelFailed();
             }
             else
             {
