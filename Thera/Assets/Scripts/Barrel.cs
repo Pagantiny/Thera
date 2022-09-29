@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Barrel : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class Barrel : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
     }
+    public void ChangeScene(string scene = "VulcanoScene")
+    {
+        SceneManager.LoadScene(sceneName: "VulcanoScene");
+    }
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

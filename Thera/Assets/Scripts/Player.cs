@@ -1,4 +1,6 @@
+using Ink.Parsed;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -119,8 +121,18 @@ public class Player : MonoBehaviour
         }
     }
     //controllo collisione con obbiettivo o ostacolo
+    public void ChangeScene(string scene = "VulcanoScene")
+    {
+        SceneManager.LoadScene(sceneName: "VulcanoScene");
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+
+            SceneManager.LoadScene("VulcanoScene");
+        }
         if (collision.gameObject.CompareTag("Objective"))
         {
             enabled = false;
@@ -130,7 +142,11 @@ public class Player : MonoBehaviour
         {
             enabled = false;
             FindObjectOfType<GameManager>().LevelFailed();
+           
+
         }
-    }
+        
+    }   
+   
 
 }

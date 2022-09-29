@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerController2D : MonoBehaviour
 {
-    
+    private SpriteRenderer spriteRenderer;
+    public Sprite[] runSprites;
+    public Sprite climbSprite;
+    private int spriteIndex;
+
+
     [Header("Movement Params")]
     public float runSpeed = 6.0f;
     public float jumpSpeed = 8.0f;
@@ -14,6 +21,9 @@ public class PlayerController2D : MonoBehaviour
     private BoxCollider2D coll;
     private Rigidbody2D rb;
 
+    
+
+
     // other
     private bool isGrounded = false;
 
@@ -21,9 +31,11 @@ public class PlayerController2D : MonoBehaviour
     {
         coll = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb.gravityScale = gravityScale;
     }
+  
+ 
 
     private void FixedUpdate()
     {
@@ -76,6 +88,19 @@ public class PlayerController2D : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
     }
+    private void AnimateSprite()
+    {
+        if (rb.velocity.x != 0)
+        {
+            spriteIndex++;
 
+            if (spriteIndex >= runSprites.Length)
+            {
+                spriteIndex = 0;
+            }
+
+            spriteRenderer.sprite = runSprites[spriteIndex];
+        }
+    }
 }
 

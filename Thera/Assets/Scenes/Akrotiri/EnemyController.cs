@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -12,13 +13,18 @@ public class EnemyController : MonoBehaviour
     {
 
     }
+    public void ChangeScene(string scene = "AkrotiriScene")
+    {
+        SceneManager.LoadScene(sceneName: "AkrotiriScene");
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "PlayerLab")
+        if (other.gameObject.tag == "Player")
         { 
             Destroy(other.gameObject);
             Debug.Log("Livello Fallito");
+            SceneManager.LoadScene("AkrotiriScene");
         }
     }
 }

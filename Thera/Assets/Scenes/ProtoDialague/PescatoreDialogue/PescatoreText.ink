@@ -7,6 +7,6 @@ Pescatore: Una vecchia Anfora dice? So che la città di Akrotiri era famosa per 
 Orione: Farò comunque un tentativo, può indicarmi dove si trova la città?
 Pescatore: Certo, basta proseguire dritto per questa via.
 Orione: La ringrazio, arrivederci.
-Pescatore: Aspetta ragazzo. Gira voce che alla città di Fira delle eleganti signore stiano raccogliendo oggetti molto particolari
-    e informazioni, prova a chiedere anche a loro. Pare che siano delle Muse.
+Pescatore: Aspetta ragazzo. Gira voce che alla città di Fira delle eleganti signore stiano raccogliendo oggetti molto particolari e informazioni, 
+    prova a chiedere anche a loro. Pare che siano delle Muse.
 Orione: Grazie per l’informazione.

@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 using Ink.Runtime;
 using System.Runtime.CompilerServices;
 using UnityEditor;
+using System.Runtime.ConstrainedExecution;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 
@@ -107,7 +110,7 @@ public class DialogueManager : MonoBehaviour
 
         if (currentChoices.Count > choices.Length)
         {
-            Debug.LogError("More choices were gigen than the UI can Support. Number of choice:" + currentChoices.Count);
+           //Debug.LogError("More choices were given than the UI can Support. Number of choice:" + currentChoices.Count);
         }
 
         int index = 0;
@@ -131,6 +134,8 @@ public class DialogueManager : MonoBehaviour
     } 
     public void MakeChoice(int choiceIndex)
     {
+    
         currentStory.ChooseChoiceIndex(choiceIndex);
+       
     }
 }
