@@ -1,6 +1,14 @@
 fileFormatVersion: 2
-guid: 469cf1ac5579d6e40ad4bfe65a3a428a
+<<<<<<<< HEAD:Thera/Assets/Sprites.meta
+guid: 37c397812866c8a468946bbcf516c510
 folderAsset: yes
+========
+<<<<<<<< HEAD:Thera/Assets/Scenes/VulcanoLvl.unity.meta
+guid: 1e08a537a8d61ca44805470495ba4ac6
+========
+guid: 0cb74bed61558e94f875b5932bfeaf9e
+>>>>>>>> main:Thera/Assets/Scenes/Church.unity.meta
+>>>>>>>> 4985ff3a4e15090a924c7e0e9f3c3912dc31e653:Thera/Assets/Scenes/Church.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
